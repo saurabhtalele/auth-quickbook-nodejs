@@ -85,8 +85,8 @@ exports.retrieveToken2 = () => {
         // var hh = Json.stringify(oauth2_token_json);
 
         //console.log("othclient", Json.stringify(oauthClient));
-        var oauthClient = oauthClient;
-        return oauthClient;
+        var oauth = oauthClient;
+        return oauth;
 
     } catch (error) {
         return next(error);

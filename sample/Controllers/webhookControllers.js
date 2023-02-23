@@ -1,7 +1,7 @@
 var Tokens = require('csrf');
 var crypto = require('crypto');
 var csrf = new Tokens();
-var VendorController = require('../Controllers/vendorController')
+var findWthController = require('../Controllers/findWthController')
 
 
 exports.webhook = async (req, res, next) => {
@@ -35,19 +35,9 @@ exports.webhook = async (req, res, next) => {
                         var forLowerCaseEntity = entities[i].name;
                         var lowerCaseEntity = forLowerCaseEntity.toLowerCase();
                         req.iid = entities[i].id;
-                        // const url = 'https://sandbox-quickbooks.api.intuit.com/v3/company/4620816365281111480/' + lowerCaseEntity + '/' + entities[i].id;
-                        // var response = await axios.get(url, {
-                        //     params: {
-                        //         minorversion: 65,
-                        //     },
-                        //     headers: {
-                        //         'Authorization': `Bearer ${bearerToken}`,
-                        //         'Accept': 'application/json',
-                        //     }
-                        // })
-                        // console.log("Axios Response", response.data);
 
-                        VendorController.getVendorById(lowerCaseEntity, req, res);
+
+                        findWthController.getfindWthById(lowerCaseEntity, req, res);
                     }
                 }
             }

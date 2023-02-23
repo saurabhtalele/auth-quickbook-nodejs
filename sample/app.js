@@ -10,10 +10,19 @@ const express = require('express');
 
 const app = express();
 const path = require('path');
-const OAuthClient = require('intuit-oauth');
+
 const bodyParser = require('body-parser');
 const ngrok = process.env.NGROK_ENABLED === 'true' ? require('ngrok') : null;
 
+
+////////////////////////////////////////////////////////////////////////
+
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./BCOAS1.0.yaml');
+
+app.use('/swag', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+const OAuthClient = require('intuit-oauth');
 /**
  * Configure View and Handlebars
  */

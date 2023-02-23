@@ -1,9 +1,9 @@
 const express = require('express');
 const authController = require('../Controllers/authControllers');
 
-const vendorController = require('../Controllers/vendorController');
+const findWthController = require('../Controllers/findWthController');
 const router = express.Router();
 
-router.get('/', vendorController.getVendorById);
+router.get('/', findWthController.getfindWthById);
 
 module.exports = router;
