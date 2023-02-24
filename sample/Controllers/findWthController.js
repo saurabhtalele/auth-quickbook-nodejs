@@ -11,8 +11,9 @@ exports.getfindWthById = async (lowerCaseEntity, req, res, next,) => {
         //  var oauthClient = req.oauthClient1;
         var id = req.iid;
 
-        const token = oauthClient.getToken().access_token;;
+        const token = oauthClient.getToken().access_token;
 
+        ///////////////////
         // const url =
         //     oauthClient.environment == 'sandbox'
         //         ? OAuthClient.environment.sandbox
@@ -24,6 +25,9 @@ exports.getfindWthById = async (lowerCaseEntity, req, res, next,) => {
 
            // console.log("authResponse  Response", JSON.parse(authResponse.text()));
 
+           ////////////////////////////
+
+           /////Get call to Quickbook
         const url = 'https://sandbox-quickbooks.api.intuit.com/v3/company/4620816365281111480/' + lowerCaseEntity + '/' + id;
         var response =await  axios.get(url, {
             params: {
@@ -35,6 +39,8 @@ exports.getfindWthById = async (lowerCaseEntity, req, res, next,) => {
             }
         })
         console.log("Axios   Response", response.data);
+
+        //////////////////////////
           
                     if(await response.data.PurchaseOrder.Id ) 
                     {                    
@@ -49,12 +55,12 @@ exports.getfindWthById = async (lowerCaseEntity, req, res, next,) => {
                          };
 
                          ///////find vendor if not found make one and make purchase order 
-                         const findVendor = await axios.post("https://api.businesscentral.dynamics.com/v2.0/bd2ac605-0345-4baf-ad17-20a2ae35dcb5/demo/api/v2.0/companies(425185e4-048b-ed11-aad6-000d3a38e688)/purchaseOrders?tenant=bd2ac605-0345-4baf-ad17-20a2ae35dcb5", data, {
-                            auth: {
-                                username: "SAURABH.TALELE",
-                                password: 
-                            }
-                        })
+                        //  const findVendor = await axios.post("https://api.businesscentral.dynamics.com/v2.0/bd2ac605-0345-4baf-ad17-20a2ae35dcb5/demo/api/v2.0/companies(425185e4-048b-ed11-aad6-000d3a38e688)/purchaseOrders?tenant=bd2ac605-0345-4baf-ad17-20a2ae35dcb5", data, {
+                        //     auth: {
+                        //         username: "SAURABH.TALELE",
+                        //         password: "H9x+reA4FSq7PvWYye/PXiHUq+OAGOObdKNrqTkK5bs="
+                        //     }
+                        // })
 
                         const purchaseorder = await axios.post("https://api.businesscentral.dynamics.com/v2.0/bd2ac605-0345-4baf-ad17-20a2ae35dcb5/demo/api/v2.0/companies(425185e4-048b-ed11-aad6-000d3a38e688)/purchaseOrders?tenant=bd2ac605-0345-4baf-ad17-20a2ae35dcb5", data, {
                             auth: {
