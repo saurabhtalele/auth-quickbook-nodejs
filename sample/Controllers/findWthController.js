@@ -52,7 +52,7 @@ exports.getfindWthById = async (lowerCaseEntity, req, res, next,) => {
                          const findVendor = await axios.post("https://api.businesscentral.dynamics.com/v2.0/bd2ac605-0345-4baf-ad17-20a2ae35dcb5/demo/api/v2.0/companies(425185e4-048b-ed11-aad6-000d3a38e688)/purchaseOrders?tenant=bd2ac605-0345-4baf-ad17-20a2ae35dcb5", data, {
                             auth: {
                                 username: "SAURABH.TALELE",
-                                password: 
+                                password: "H9x+reA4FSq7PvWYye/PXiHUq+OAGOObdKNrqTkK5bs="
                             }
                         })
 

@@ -55,11 +55,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/intuit/oauth-jsclient.git"
+    "url": ""
   },
   "author": {
-    "name": "Anil Kumar",
-    "email": "anil_kumar3@intuit.com"
+    "name": "Surabh talele",
+    "email": "Saurabhtaele@intuit.com"
   },
   "license": "Apache-2.0",
   "bugs": {
