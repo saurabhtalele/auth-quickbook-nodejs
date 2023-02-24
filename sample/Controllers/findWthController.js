@@ -55,12 +55,21 @@ exports.getfindWthById = async (lowerCaseEntity, req, res, next,) => {
                          };
 
                          ///////find vendor if not found make one and make purchase order 
+<<<<<<< HEAD
                         //  const findVendor = await axios.post("https://api.businesscentral.dynamics.com/v2.0/bd2ac605-0345-4baf-ad17-20a2ae35dcb5/demo/api/v2.0/companies(425185e4-048b-ed11-aad6-000d3a38e688)/purchaseOrders?tenant=bd2ac605-0345-4baf-ad17-20a2ae35dcb5", data, {
                         //     auth: {
                         //         username: "SAURABH.TALELE",
                         //         password: "H9x+reA4FSq7PvWYye/PXiHUq+OAGOObdKNrqTkK5bs="
                         //     }
                         // })
+=======
+                         const findVendor = await axios.post("https://api.businesscentral.dynamics.com/v2.0/bd2ac605-0345-4baf-ad17-20a2ae35dcb5/demo/api/v2.0/companies(425185e4-048b-ed11-aad6-000d3a38e688)/purchaseOrders?tenant=bd2ac605-0345-4baf-ad17-20a2ae35dcb5", data, {
+                            auth: {
+                                username: "SAURABH.TALELE",
+                                password: "H9x+reA4FSq7PvWYye/PXiHUq+OAGOObdKNrqTkK5bs="
+                            }
+                        })
+>>>>>>> e7a1e8252055d69f543fed9290b19f50694b2ab5
 
                         const purchaseorder = await axios.post("https://api.businesscentral.dynamics.com/v2.0/bd2ac605-0345-4baf-ad17-20a2ae35dcb5/demo/api/v2.0/companies(425185e4-048b-ed11-aad6-000d3a38e688)/purchaseOrders?tenant=bd2ac605-0345-4baf-ad17-20a2ae35dcb5", data, {
                             auth: {
